@@ -1,0 +1,320 @@
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: MyAppBar(
+        ),
+        body: SingleChildScrollView(
+          /* scrollDirection: ScrollAction, */
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+                Padding(
+                    padding: EdgeInsets.only(top: 20, bottom: 20), // Thêm padding vào Row
+                    child: Row(                 
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                              TextButton(
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 53, 196, 170)),
+                                  fixedSize: MaterialStateProperty.all<Size>(Size(200, 200)),
+                                ),
+                                onPressed: (){},
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      height: 120,
+                                      width: 120,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                          image: AssetImage('assets/fashion.png'),
+                                          fit: BoxFit.fill,
+                                        )
+                                      ),
+                                    ),
+                                    Text(
+                                      'Fashion',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                    ), 
+                                  ],
+                                ),
+                              ),
+                              TextButton(
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 240, 147, 60)),
+                                  fixedSize: MaterialStateProperty.all<Size>(Size(200, 200)),
+                                ),
+                                onPressed: (){},
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      height: 120,
+                                      width: 120,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                          image: NetworkImage('https://tse4.mm.bing.net/th?id=OIP.RLRrYeFHn35kOoX7wHDO_AHaHR&pid=Api&P=0'),
+                                          fit: BoxFit.fill,
+                                        )
+                                      ),
+                                    ),
+                                    Text(
+                                      'Beauty',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                    ), 
+                                  ],
+                                ),
+                              ),
+                              ],
+                            ),
+                    ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20, bottom: 20),
+                  child:  Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 101, 137, 193)),
+                        fixedSize: MaterialStateProperty.all<Size>(Size(200, 200)),
+                      ),
+                      onPressed: (){},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: 120,
+                            width: 120,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: NetworkImage('data:image/png;base64,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'),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          ),
+                          Text(
+                            'Electronics',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ), 
+                        ],
+                      ),
+                      ),
+                    TextButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 194, 60, 204)),
+                        fixedSize: MaterialStateProperty.all<Size>(Size(200, 200)),
+                      ),
+                      onPressed: (){},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: 120,
+                            width: 120,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: NetworkImage('data:image/png;base64,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'),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          ),
+                          Text(
+                            'Jewellery',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ), 
+                        ],
+                      ),
+                      ),
+                  ],
+                ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20, bottom: 20),
+                  child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 166, 110, 227)),
+                        fixedSize: MaterialStateProperty.all<Size>(Size(200, 200)),
+                      ),
+                      onPressed: (){},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: 120,
+                            width: 120,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: NetworkImage('https://tse3.mm.bing.net/th?id=OIP.Tu7nU6wPCd7DHc7xd3GGVwHaFe&pid=Api&P=0'),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          ),
+                          Text(
+                            'Footwear',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ), 
+                        ],
+                      ),
+                      ),
+                    TextButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 52, 190, 217)),
+                        fixedSize: MaterialStateProperty.all<Size>(Size(200, 200)),
+                      ),
+                      onPressed: (){},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: 120,
+                            width: 120,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: NetworkImage('data:image/png;base64,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'),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          ),
+                          Text(
+                            'Toys',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ), 
+                        ],
+                      ),
+                      ),
+                  ],
+                ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20, bottom: 20),
+                  child:Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 66, 194, 128)),
+                        fixedSize: MaterialStateProperty.all<Size>(Size(200, 200)),
+                      ),
+                      onPressed: (){},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: 120,
+                            width: 120,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: NetworkImage('data:image/png;base64,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'),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          ),
+                          Text(
+                            'Fumiture',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ), 
+                        ],
+                      ),
+                      ),
+                    TextButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 213, 238, 55)),
+                        fixedSize: MaterialStateProperty.all<Size>(Size(200, 200)),
+                      ),
+                      onPressed: (){},
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            height: 120,
+                            width: 120,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: NetworkImage('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX///8AAADi4uL8/PwaGhp2dnbx8fHu7u74+Pjl5eXX19eWlpZeXl48PDwYGBiKioowMDBNTU2ysrKenp4SEhKEhIRvb28NDQ1DQ0POzs7a2trGxsYqKiofHx+oqKhQUFAE4D5fAAADLUlEQVR4nO3a63KiQBRFYREjiHjDW3Q08/5vOaZSM4lKlW179mmGWut/TvorWmhJBoP48mpaz+aZtvmsnlb5C6uMb7wYiXHfjRZjf+B64+b7bLN29pUrV99nq9ITOPTboN+Nhn7A4pwAmGXnwk3ov0W/WnkBt4mAWbbwARbJgFnms093CYU7D2DgJazy56rCxnpcxCZoJc8/oD+C5jYC0W110Eqef3ZNgubWAtFN5TJoJRGTg+Yu9SebYh+0koiFBM3d6z+IYZspq54efAwbPBGYrhuGLWT79ODAc4T+cBoozD6GzxV2K+2SUBVChAgRIkSI0F345lNCofy3fZVQ6PMXkxyhbQgFITQOoSCExiEUhNA4hIIQGodQEELjEApCaBxCQQiNQygIoXEIBSE0DqEghMYhFITQOISCEBqHUBBC4xAKQmgcQkEIjUMoCKFxCAUhNA6hIITGIRSE0DiEghAah1AQQuMQCkJoHEJBCI1DKAihcQgFITQOoSCExiEUhNA4hIIQGodQEELjEApCaBxCQQiNQygIoXEIBSE0DqEghMYhFITQOISCEBqHUBBC4xAKQmgcQkEIjUMoCKFxCAUhNA6hIITGIRSE0DiEghAah1AQQuMQCkJoHEJBCI27EhZjj4qEwpFPCYUJQogQIUKECBEiRIgQIcJVU+R5XjS/eyp8P/wbcnjvo3B3Neatf8L6Zk7dN+Hy7qXVrGfCX3eDfvVL+N4yKe5u01XhtGXStFfCQ8ukQ6+Ebeuym9QFYdEyqXj8Y/+R8Ngy6dgr4f3DIvZx0VXhtmXStlfC0/3f4fJTr4TZ+m7QR9ygzgqzyc2cSeSc7gpP5dWYyD3aZWF2+nkVJ7HALgsvh9O/l7GMO5J2X3j5nt9Ux6rZvTJCL4y9Q1h1e8eyr9gnBe7bTri2lcukwmX5eImvFvsKyabbF1qKmqTCxkEY97XOKv3H8NJLN/sX2z1enkEpL6LLJYz9YmfRwgc4GKwSAVdewEFxTgI8O+3Rz4abBMC5/kj6o9J/o64cTjNXrX0v4+b+NYi88WL0eGFGjRZjf+ClvJrWs7kYN5/V0+qV/5j/A0yhSG4wfo1TAAAAAElFTkSuQmCC'),
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          ),
+                          Text(
+                            'Mobies',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ), 
+                        ],
+                      ),
+                      ),
+                  ],
+                ),
+                )
+            ],
+          ),
+        ),
+      ),
+      debugShowCheckedModeBanner: false,
+    ),
+  ) ; 
+}
+
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text('Categories'),
+      actions: [
+        IconButton(
+          icon: Icon(Icons.search),
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: Icon(Icons.favorite),
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: Icon(Icons.shopping_cart),
+          onPressed: () {},
+        ),
+      ],
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+}
